@@ -1,0 +1,49 @@
+BoxLayout:
+    orientation: 'vertical'
+    background_color: 1, 0, 0, 1
+
+    Label:
+        id: information_box
+        text: 'Time Statistics by GAI Tech'
+        size_hint: 1, 0.15
+
+    BoxLayout:
+        orientation: 'horizontal'
+        GridLayout:
+            rows: 5
+            cols: 1
+            size_hint: 0.20, 1
+
+            Button:
+                id: load_data
+                text: 'Load Data'
+                background_color: 1, 0.5, 0.1, 1
+
+            Button:
+                id: clear_data
+                text: 'Clear'
+                background_color: 1, 0, 0, 1
+
+            Button:
+                id: run_program
+                text: 'Run'
+                background_color: 0, 1, 0, 1
+                on_press: app.display_required_items()
+
+            Button:
+                id: support
+                text: 'Support'
+                background_color: 0, 0.75, 1, 1
+                on_press: self.background_color = 0.0, 0.5, 1.0, 1.0
+
+            Button:
+                id: do_nothing
+                text: 'Do Nothing'
+                background_color: 1, 0, 1, 1
+                on_press: app.random_colour()
+
+        BoxLayout:
+            orientation: 'vertical'
+            BoxLayout:
+                orientation: 'vertical'
+                id: items_box
